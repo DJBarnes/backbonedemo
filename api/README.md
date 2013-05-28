@@ -1,0 +1,1 @@
+This folder will contain all of the api used to talk to the database. All server side code will be in here.

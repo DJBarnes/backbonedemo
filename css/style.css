@@ -1,0 +1,168 @@
+/*Covers the entire document*/
+* {
+  font-family: "Comic Sans MS";
+  font-size: 18px;
+}
+
+/*Body section of CSS*/
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/*Div CSS for position*/
+div {
+  background-color: #FFFFFF;
+}
+
+div.header1 {
+  position: absolute;
+  width: 25%;
+  left: 10px;
+}
+
+div.header2 {
+  position: absolute;
+  width: 60%;
+  left: 25%;
+  text-align: center;
+}
+
+div.header3 {
+  position: absolute;
+  width: 15%;
+  left: 84%;
+  text-align: right;
+}
+
+div.footer1 {
+  position: absolute;
+  width: 8%;
+  left: 10px;
+}
+
+div.footer2 {
+  position: absolute;
+  width: 72%;
+  left: 8%;
+  text-align: center;
+}
+
+div.footer3 {
+  position: absolute;
+  width: 20%;
+  left: 80%;
+  text-align: right;
+}
+
+div.content {
+  height: 100%;
+  border: solid 1px #000000;
+  width: 98%;
+}
+
+div.header {
+  height: 104px;
+}
+
+div.footer {
+  height: 40px;
+  bottom: 10px;
+  position: inherit;
+}
+
+/*Span being used for header*/
+span.header {
+  font-size: 60px;
+  font-weight: bold;
+  display: inherit;
+}
+
+span.footerText {
+  font-size: 20px;
+  display: inherit;
+}
+
+/*Input and Textarea CSS*/
+input, textarea {
+  border: 1px solid #000000;
+  min-height: 30px;
+  width: 100%;
+  outline: none;
+  color: #000000;
+  border-radius: 5px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#777777), color-stop(100%,#AAAAAA)); /* Chrome,Safari4+ */
+}
+
+/*Button CSS*/
+button {
+  padding: 6px;
+  height: inherit;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#777777), color-stop(100%,#AAAAAA)); /* Chrome,Safari4+ */
+  border-radius: 5px;
+}
+
+/*Table CSS */
+table.itemTable {
+  color: #000;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #666666;
+  width: 100%;
+}
+
+tr.even {
+  background-color: #DDDDDD;
+}
+
+table.itemTable tr:hover {
+  background-color: #AAAAAA;
+}
+
+tr {
+  vertical-align: middle;
+}
+
+tr, th, td {
+  padding: .75em;
+  color: #000000;
+}
+
+/*CSS for the item table*/
+td.name {
+  width: 30%;
+}
+td.quantity {
+  text-align: right;
+  width: 15%;
+}
+
+td.description {
+  width: 55%
+}
+
+/*Image CSS */
+img.mainImage {
+  cursor: pointer;
+  width: 100%;
+  max-width: 290px;
+}
+
+img.manage {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+
+img.github {
+  cursor: pointer;
+  width: 210px;
+  height: 80px;
+}
+
+img.backbone {
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+}
+

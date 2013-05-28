@@ -1,0 +1,1 @@
+This folder will contain all of the non library javascript files

@@ -1,0 +1,1 @@
+This folder will contain the templates used to create the dynamic content.
