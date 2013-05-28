@@ -7,7 +7,7 @@ tpl = {
     var loadTemplate = function(index) {
       var name = names[index];
       $.get('tpl/' + name + '.html', function(data) {
-        that.templates[name] = data;
+        self.templates[name] = data;
         index++;
         if (index < names.length) {
           loadTemplate(index);
