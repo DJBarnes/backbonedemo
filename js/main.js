@@ -12,25 +12,16 @@ var AppRouter = Backbone.Router.extend({
       this.headerView.render();
       this.footerView = new FooterView({});
       this.footerView.render();
-      /*this.itemListView = new ItemListView({
+      this.itemListView = new ItemListView({
        model : app.itemCollection
        });
        this.itemListView.render();
-       */
+       
     });
   },
 
   getData : function(callback) {
-    var itemSelf = this;
-    $.ajax({
-      'url' : 'api/items/'
-    }).success(function(data) {
-      itemSelf.ajaxItemC = data;
-      $('#content').html('<p>' + itemSelf.ajaxItemC + '</p>');
-      if (callback)
-        callback.call(itemSelf);
-    });
-    /*
+
      this.itemCollection = new ItemCollection();
 
      var itemSelf = this;
@@ -41,11 +32,11 @@ var AppRouter = Backbone.Router.extend({
      callback.call(itemSelf);
      }
      });
-     */
+     
   }
 });
 
-tpl.loadTemplates(['pageHeader', 'pageFooter'], function() {
+tpl.loadTemplates(['pageHeader', 'pageFooter', 'itemListItem'], function() {
   window.app = new AppRouter();
   Backbone.history.start();
 });

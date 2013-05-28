@@ -1,5 +1,5 @@
 window.ItemListView = Backbone.View.extend({
-  tagName : 'p',
+  tagName : 'table',
   className: 'itemTable',
   initialize: function() {
     
@@ -8,7 +8,28 @@ window.ItemListView = Backbone.View.extend({
     $('#content').empty();
     $(this.el).empty();
     
-    $(this.el).html(JSON.stringify(this.model.models));
+    $(this.el).append('<tr><td class="name">Item Name</td><td class="quantity">Quantity</td><td class="description">Description</td></tr>')
+    
+    _.each(this.model.models, function(item) {
+      $(this.el).append(new ItemListItemView({
+        model : item,
+      }).render());
+    }, this);
     $('#content').html(this.el);
+  }
+});
+
+window.ItemListItemView = Backbone.View.extend({
+  tagName : 'tr',
+  
+  initialize: function(){
+    this.template = _.template(tpl.get('itemListItem'));
+    
+    $(this.el).attr('id',this.model.id);
+  },
+  
+  render : function() {
+    $(this.el).html(this.template(this.model.toJSON()));
+    return this.el;
   }
 });
