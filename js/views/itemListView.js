@@ -5,7 +5,6 @@ window.ItemListView = Backbone.View.extend({
     
   },
   render : function() {
-    $('#content').empty();
     $(this.el).empty();
     
     $(this.el).append('<tr><td class="name">Item Name</td><td class="quantity">Quantity</td><td class="description">Description</td></tr>')
@@ -15,21 +14,31 @@ window.ItemListView = Backbone.View.extend({
         model : item,
       }).render());
     }, this);
-    $('#content').html(this.el);
+    //$('#content').html(this.el);
+    return this.el;
   }
 });
 
 window.ItemListItemView = Backbone.View.extend({
   tagName : 'tr',
+  className: 'items',
   
   initialize: function(){
     this.template = _.template(tpl.get('itemListItem'));
     
-    $(this.el).attr('id',this.model.id);
+    $(this.el).attr('id',('itemrow' + this.model.id));
   },
   
   render : function() {
     $(this.el).html(this.template(this.model.toJSON()));
     return this.el;
+  },
+  
+  events : {
+    'click' : 'showItemDetails'
+  },
+  
+  showItemDetails : function() {
+    app.navigate('items/' + this.model.id, true);
   }
 });

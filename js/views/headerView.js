@@ -14,6 +14,12 @@ window.HeaderView = Backbone.View.extend({
   },
   
   navigateToMain : function() {
-    app.navigate('',true);
+    if (app.detailView) {
+      $('#detailView').slideToggle(500, function() {
+        //app.detailView.close();
+        //app.detailView = null;
+        app.navigate('',false);
+      });
+    }
   }
 });
