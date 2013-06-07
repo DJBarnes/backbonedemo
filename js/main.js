@@ -16,17 +16,21 @@ var AppRouter = Backbone.Router.extend({
   },
 
   list : function() {
+    //debugger;
     if (app.detailView) {
-      app.detailView.close();
-      app.detailView = null;
+      $('#detailView').slideToggle(500, function() {
+        app.detailView.close();
+        app.detailView = null;
+      });
+    } else {
+      this.showHeader();
+      this.getData(function() {
+        $('#content').empty();
+        app.showView('#content', new ItemListView({
+          model : app.itemCollection
+        }));
+      });
     }
-    this.showHeader();
-    this.getData(function() {
-      $('#content').empty();
-      app.showView('#content', new ItemListView({
-        model : app.itemCollection
-      }));
-    });
   },
 
   itemDetails : function(id) {

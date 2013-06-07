@@ -14,12 +14,6 @@ window.HeaderView = Backbone.View.extend({
   },
   
   navigateToMain : function() {
-    if (app.detailView) {
-      $('#detailView').slideToggle(500, function() {
-        //app.detailView.close();
-        //app.detailView = null;
-        app.navigate('',false);
-      });
-    }
+    app.navigate('',true);
   }
 });
