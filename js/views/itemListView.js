@@ -24,6 +24,8 @@ window.ItemListItemView = Backbone.View.extend({
   className: 'items',
   
   initialize: function(){
+    this.model.bind("change", this.render, this);
+    
     this.template = _.template(tpl.get('itemListItem'));
     
     $(this.el).attr('id',('itemrow' + this.model.id));
