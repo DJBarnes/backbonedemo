@@ -10,7 +10,9 @@ window.Item = Backbone.Model.extend({
 
   initialize : function() {
     this.on("error", function(model, error) {
-      alert(error);
+      alert(error.responseText);
+      app.detailView.close();
+      app.detailView = null;
     })
   }
   

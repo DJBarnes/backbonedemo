@@ -12,40 +12,45 @@ var AppRouter = Backbone.Router.extend({
 
   routes : {
     "" : "list",
-    "items/:id" : "itemDetails"
+    "items/:id" : "itemDetails",
+    "login" : "login"
   },
 
   list : function() {
     //debugger;
-    if (app.detailView) {
-      $('#detailView').slideToggle(500, function() {
-        app.detailView.close();
-        app.detailView = null;
-      });
-    } else {
-      this.showHeader();
-      this.getData(function() {
-        $('#content').empty();
-        app.showView('#content', new ItemListView({
-          model : app.itemCollection
-        }));
-      });
-    }
+    this.authenticated(function() {
+      if (app.detailView) {
+        $('#detailView').slideToggle(500, function() {
+          app.detailView.close();
+          app.detailView = null;
+        });
+      } else {
+        app.showHeader();
+        app.getData(function() {
+          $('#content').empty();
+          app.showView('#content', new ItemListView({
+            model : app.itemCollection
+          }));
+        });
+      }
+    });
   },
 
   itemDetails : function(id) {
-    this.showHeader();
-    this.getData(function() {
-      if (!app.currentView) {
-        app.showView('#content', new ItemListView({
-          model : app.itemCollection
+    this.authenticated(function() {
+      app.showHeader();
+      app.getData(function() {
+        if (!app.currentView) {
+          app.showView('#content', new ItemListView({
+            model : app.itemCollection
+          }));
+        }
+        var item = app.itemCollection.get(id);
+        app.toggleView(('#itemrow' + id), new ItemDetailsView({
+          model : item
         }));
-      }
-      var item = app.itemCollection.get(id);
-      app.toggleView(('#itemrow' + id), new ItemDetailsView({
-        model : item
-      }));
-      console.log('ready');
+        console.log('ready');
+      });
     });
   },
 
@@ -83,6 +88,19 @@ var AppRouter = Backbone.Router.extend({
     }
   },
 
+  login : function() {
+    this.showHeader();
+    this.showView('#content', new LoginView);
+  },
+
+  authenticated : function(callback) {
+    if ($.cookie('PHPSESSID')) {
+      callback.call();
+    } else {
+      app.navigate('login', true);
+    }
+  },
+
   getData : function(callback) {
     if (!this.itemCollection) {
       this.itemCollection = new ItemCollection();
@@ -99,7 +117,7 @@ var AppRouter = Backbone.Router.extend({
   }
 });
 
-tpl.loadTemplates(['pageHeader', 'pageFooter', 'itemListItem', 'itemDetails'], function() {
+tpl.loadTemplates(['pageHeader', 'pageFooter', 'itemListItem', 'itemDetails', 'login'], function() {
   window.app = new AppRouter();
   Backbone.history.start();
 });
