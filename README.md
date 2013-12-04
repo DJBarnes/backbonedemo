@@ -1,4 +1,4 @@
-Backbone Demo Tutorial
+Backbone Demo
 =============
 
 <img src="http://backboneconf.com/img/backbone.png" alt="Backbone Demo" align="right" />
