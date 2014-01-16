@@ -91,7 +91,7 @@ Installation
 The simplest way to install Backbone Demo is to clone the entire project to a web accessible directory on your webserver, or select the branch you would like to start at, and use the download as zip option to get the project at that stage.
 
 ```bash
-$ git clone git@github.com/DJBarnes:backbonedemo
+$ git clone git@github.com:DJBarnes/backbonedemo
 ```
 
 Import the .sql file located in the api directory of the master branch to your mysql database
