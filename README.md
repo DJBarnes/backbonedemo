@@ -1,11 +1,10 @@
 Backbone Demo
 =============
 
-<img src="http://backboneconf.com/img/backbone.png" alt="Backbone Demo" align="right" />
 Backbone Demo is a small client side web application to demonstrate how to use backbone.js
 
-A [working demo](http://barnesbrothers.homeserver.com/backbonedemo) of
-the master branch is available.
+A [working demo](http://barnesbrothers.homeserver.com/backbonedemo) of the master branch is available.
+The application is wired up to an actual database, and although I don't mind you playing around to see how the application functions, please don't be a troll. Otherwise I will be forced to remove the database component and alter the behavior of the application to something different than what the code reflects.
 
 #### Features
 
