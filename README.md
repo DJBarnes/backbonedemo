@@ -118,6 +118,27 @@ function getConnection() {
 otherwise the .htaccess file will not do it's job, and you will have
 failed calls to the server for data.
 
+## Database Information
+### Database Name
+By default the name of the database is: 
+
+backbonedemo
+
+This can easily be changed if needed by following the instuctions above.
+
+### Tables
+
+There is only one table for this demo, and the structure for it is as follows.
+
+#### item
+
+| Field               | Type             | Null | Key | Default             | Extra          |
+|---------------------|------------------|------|-----|---------------------|----------------|
+| id                  | int(4)           | NO   | PRI | NULL                | auto_increment |
+| name                | varchar(15)      | NO   |     | NULL                |                |
+| description         | varchar(55)      | NO   |     | NULL                |                |
+| quantity            | int(3)           | NO   |     | NULL                |                |
+
 Issues
 ------
 
