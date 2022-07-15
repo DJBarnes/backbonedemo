@@ -1,9 +1,10 @@
+<img src="https://backbonejs.org/docs/images/backbone.png" alt="Backbone Demo" />
 Backbone Demo
 =============
 
 Backbone Demo is a small client side web application to demonstrate how to use backbone.js
 
-A [working demo](http://barnesbrothers.homeserver.com/backbonedemo) of the master branch is available.
+A [working demo](https://backbonedemo.barnesbrothers.net) of the master branch is available.
 The application is wired up to an actual database, and although I don't mind you playing around to see how the application functions, please don't be a troll. Otherwise I will be forced to remove the database component and alter the behavior of the application to something different than what the code reflects.
 
 #### Features
@@ -17,14 +18,15 @@ The application is wired up to an actual database, and although I don't mind you
 
 Inspiration for this demo as well as some pieces of code were used from another backbone demo.
 
-* [Backbone.js Wine Cellar Tutorial](http://coenraets.org/blog/2011/12/backbone-js-wine-cellar-tutorial-part-1-getting-started/) by Christophe Coenraets
+* [Backbone.js Wine Cellar Tutorial](#) by Christophe Coenraets
+  * Link removed as it appears to no longer exist on the internet.
 
 Branches
 --------
 Each branch sets a milestone for the project. Because of this design, it
 is possible to switch the branch on github, and download the project at
 any specific point in time as it was developed. It is also possible to
-do a comparision between branches on github to see what changed from one
+do a comparison between branches on github to see what changed from one
 branch to the next. Below is a description of each branch.
 
 #### Part1Html
@@ -90,7 +92,7 @@ Installation
 The simplest way to install Backbone Demo is to clone the entire project to a web accessible directory on your webserver, or select the branch you would like to start at, and use the download as zip option to get the project at that stage.
 
 ```bash
-$ git clone git@github.com:DJBarnes/backbonedemo
+$ git clone git@github.com:DJBarnes/backbonedemo.git
 ```
 
 Import the .sql file located in the api directory of the master branch to your mysql database
@@ -119,7 +121,7 @@ failed calls to the server for data.
 
 ## Database Information
 ### Database Name
-By default the name of the database is: 
+By default the name of the database is:
 
 backbonedemo
 
